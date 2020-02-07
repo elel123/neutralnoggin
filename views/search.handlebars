@@ -5,6 +5,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link scripts -->
 	<script src="js/bootstrap.js"> </script>
@@ -26,66 +27,29 @@
 			padding: 0;
 		}
 
-		.subBanner {
-			padding: 0px;
-			height: 30px;
+
+		.myBanner {
+			position: fixed;
+			padding: 5px;
+			height: 70px;
 			width: 100%;
+			top: 0px;
 			overflow: hidden;
 			border: solid;
 			background-color: #D8D8D8;
 			border-color: #5f3273;
-			border-width: 3px 0px 3px 0px;
+			border-width: 0px 0px 5px 0px;
 		}
 
-		.subBanner h3 {
-			line-height: 0%;
+
+		.taskbarTable table {
+			margin-left: auto;
+			margin-right: auto;
 		}
 
-		.articleBanner {
-			padding: 0px;
-			padding-top: 0px;
-			height: 120px;
-			width: 100%;
-			overflow: hidden;
-			border: solid;
-			background-color: #F2F2F2;
-			border-color: #5f3273;
-			border-width: 3px 0px 3px 0px;		
-		}
-
-		.title {
+		.form-control {
 			text-align: center;
-		}
-
-		.divider hr {
-			border: 0px;
-		}
-
-		th, td {
-			padding: 10px;
-			border: 0;
-
-		}
-
-		td:nth-child(2) {
-			text-align: right;
-		}
-
-
-		table, tr{
-  			border: 1px solid black;
-		}
-
-		tr:nth-child(even) {
- 			background-color: #E8E8E8;
-		}	
-
-		table {
-			border-spacing: 10px;
-			width: 95%;
-			margin-left: 10px;
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
+			width: 98%;
 
 		}
 
@@ -117,6 +81,10 @@
 			text-align: right;
 		}
 
+		.selected {
+			font-weight: bolder;
+		}
+
 	</style>
 
 </head>
@@ -128,7 +96,33 @@
 		    <div class="form-group">
 		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
 		    </div>
-		 </form>
+		</form>
+		<div class="title">
+			<h1>Trending Topics</h1>
+		</div>
+
+	</div>
+
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a class="selected" href="https://www.google.com/search?q=superbowl">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+
 	</div>
 
 	<div class="trending-banner">
@@ -146,9 +140,9 @@
 
 		<a class="divider"><hr></a> -->
 
-		<table>
-		      	<tr>
-		     
+		<div class="topicTable">
+			<table>
+		      	<tr>     
 		        	<td colspan="2" border="0">
 		        		<a href="https://www.google.com/search?q=iowa+caucus">Iowa Caucuses</a>
 		        	</td>
@@ -156,33 +150,34 @@
 		        	<td>2k+ searches</td>
 		     	</tr>
 		     
-	     	<tr>
-	        	<td colspan="2">
-	        		<a href="https://www.google.com/search?q=superbowl">Superbowl</a>
-	        	</td>
-	        	<td>1.5k+ searches</td>
-	      	</tr>
-	      	<tr>
-		        <td colspan="2">
-		        	<a href="https://www.google.com/search?q=kansas+city">Kansas City</a>
-		        </td>
-		        <td>900+ searches</td>
-	    	</tr>
-	    	<tr>
-		        <td colspan="2">
-		        	<a href="https://www.google.com/search?q=pete+buttigieg">Pete Buttigieg</a>
-		        </td>
-		        <td>850+ searches</td>
-	    	</tr>
-	    	<tr>
-		        <td colspan="2">
-		        	<a href="https://www.google.com/search?q=coronavirus">Coronavirus</a>
-		        </td>
-		        <td>600+ searches</td>
-	    	</tr>
+		     	<tr>
+		        	<td colspan="2">
+		        		<a href="https://www.google.com/search?q=superbowl">Superbowl</a>
+		        	</td>
+		        	<td>1.5k+ searches</td>
+		      	</tr>
+		      	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=kansas+city">Kansas City</a>
+			        </td>
+			        <td>900+ searches</td>
+		    	</tr>
+		    	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=pete+buttigieg">Pete Buttigieg</a>
+			        </td>
+			        <td>850+ searches</td>
+		    	</tr>
+		    	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=coronavirus">Coronavirus</a>
+			        </td>
+			        <td>600+ searches</td>
+		    	</tr>
 
 
-	    </table>
+		    </table>
+		</div>
 	</div>
 
 	<div class="articles">
@@ -219,7 +214,9 @@
 			<div class="articleBanner">
 				<div class="row">
 					<div class="articleTitles column">
-						<h4>Trump lashes out at Democrats in cheering his acquittal as Pelosi declares him 'impeached forever'</h4>
+						<h4>
+							<a href="https://www.washingtonpost.com/politics/trump-lashes-out-at-democrats-in-cheering-his-acquittal-as-pelosi-declares-him-impeached-forever/2020/02/06/2148e47a-48f3-11ea-b4d9-29cc419287eb_story.html">Trump lashes out at Democrats in cheering his acquittal as Pelosi declares him 'impeached forever'</a>
+						</h4>
 
 					</div>
 					<div class="img column">
@@ -232,7 +229,9 @@
 			<div class="articleBanner">
 				<div class="row">
 					<div class="articleTitles column">
-						<h4>Iowa Dems release '100 percent' of caucus vote totals showing  Buttigieg ahead, amid calls for recanvass</h4>
+						<h4>
+							<a href="https://www.foxnews.com/politics/iowa-democrat-final-caucus-vote-totals-buttigieg-sanders">Iowa Dems release '100 percent' of caucus vote totals showing  Buttigieg ahead, amid calls for recanvass</a>
+						</h4>
 
 					</div>
 					<div class="img column">
@@ -252,4 +251,7 @@
 
 
 </body>
+
+
+
 </html>

@@ -10,7 +10,7 @@ var handlebars = require('express3-handlebars')
 
 // Add routes below! pt.1
 var index = require('./routes/index.js');
-var search = require('./routes/search');
+var search = require('./routes/search.js');
 
 // Example route
 // var user = require('./routes/user');
