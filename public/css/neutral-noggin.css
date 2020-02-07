@@ -45,6 +45,20 @@ a {
 	background: #bdbdbd;
 }
 
+.myTaskbar {
+  position: fixed !important;
+  bottom: 0;
+  padding: 5px;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  border: solid;
+  background-color: #C2C2C2;
+  border-width: 0px 0px 0px 0px;
+}
+
+
+
 
 
 .cf:before,
