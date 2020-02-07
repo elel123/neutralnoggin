@@ -46,10 +46,6 @@
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
 		}
-		.taskbarTable table {
-			margin-left: auto;
-			margin-right: auto;
-		}
 
 		.taskbarTable table {
 			margin-left: auto;
@@ -84,9 +80,7 @@
 			text-align: right;
 		}
 
-		.selected {
-			font-weight: bolder;
-		}
+
 
 	</style>
 
@@ -101,6 +95,28 @@
 		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
 		    </div>
 		</form>
+	</div>
+
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a href="home">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a class="selected" href="search">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a href="saved">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a href="more">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+
 	</div>
 
 	<div class="sub-banner">
