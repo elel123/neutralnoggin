@@ -40,7 +40,8 @@ if ('development' == app.get('env')) {
 
 // Add routes below! pt.2
 app.get('/', index.view);
-app.get('/', search.view);
+app.get('/home', index.view);
+app.get('/search', search.view);
 
 
 // Example route

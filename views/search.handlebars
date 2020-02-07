@@ -1,9 +1,20 @@
 <html>
 <head>
 
-	<title>Search Page</title>
+	<title>Neutral Noggin - Search Page</title>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link scripts -->
+	<script src="js/bootstrap.js"> </script>
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap' rel='stylesheet'>
 
 	<!-- position: fixed; allows for things to not scroll  -->
 
@@ -13,20 +24,6 @@
 			margin: 0;
 			margin-top: 0 !important;
 			padding: 0;
-		}
-
-
-		.myBanner {
-			position: fixed;
-			padding: 5px;
-			height: 75px;
-			width: 100%;
-			top: 0px;
-			overflow: hidden;
-			border: solid;
-			background-color: #D8D8D8;
-			border-color: #5f3273;
-			border-width: 0px 0px 5px 0px;
 		}
 
 		.subBanner {
@@ -72,7 +69,6 @@
 
 		td:nth-child(2) {
 			text-align: right;
-
 		}
 
 
@@ -90,12 +86,6 @@
 			margin-left: 10px;
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
-
-		}
-
-		.form-control {
-			text-align: center;
-			width: 98%;
 
 		}
 
@@ -131,38 +121,30 @@
 
 </head>
 <body>
+	<div class="container pad-for-top-banner"></div>
 
-	<div class="myBanner">
-		<div class="title">
-			<h1>Trending Topics</h1>
-		</div>
-
-		<form class="searchBar" role="form" method="get" action="/add">
+	<div class="top-banner">
+		<form class="search-bar-search-page" role="form" method="get" action="/add">
 		    <div class="form-group">
-		      <input type="text" class="form-control" id="name" placeholder="Search for Topics" name="name">
+		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
 		    </div>
 		 </form>
 	</div>
 
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
+	<div class="trending-banner">
+		<h1>Trending Topics</h1>
+	</div>
+
 	<a class="divider"><hr></a>
 
 	<div class="topics">
-		<div class="subBanner">
-			<div class="title">
-				<h3>Most Searched Topics</h3>
-
+<!-- 		<div class="subBanner">
+				<div class="title">
+					<h3>Most Searched Topics</h3>
+				</div>
 			</div>
-		</div>
 
-		<a class="divider"><hr></a>
+		<a class="divider"><hr></a> -->
 
 		<table>
 		      	<tr>
@@ -214,7 +196,25 @@
 			</div>
 		</div>
 
-		<div id="article1">
+		{{#each articles}}
+		<a href={{URL}}>
+
+			<div class="container article-container">
+
+				<div class="container headline-container">
+					<h3 class="headline">{{headline}}</h3>
+				</div>
+
+				<div class="container image-container">
+					<img src={{imageURL}} class="img-responsive">
+				</div>
+
+			</div>
+
+		</a>
+		{{/each}}
+
+<!-- 		<div id="article1">
 			<a class="divider"><hr></a>
 			<div class="articleBanner">
 				<div class="row">
@@ -241,9 +241,11 @@
 				</div>
 			</div>
 
-		</div>
+		</div> -->
 
 	</div>
+
+
 
 
 
