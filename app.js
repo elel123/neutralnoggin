@@ -11,6 +11,8 @@ var handlebars = require('express3-handlebars')
 // Add routes below! pt.1
 var index = require('./routes/index.js');
 var search = require('./routes/search.js');
+var saved = require('./routes/saved.js');
+var more = require('./routes/more.js');
 
 // Example route
 // var user = require('./routes/user');
@@ -42,6 +44,8 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/home', index.view);
 app.get('/search', search.view);
+app.get('/saved', saved.view);
+app.get('/more', more.view);
 
 
 // Example route
