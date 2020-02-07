@@ -1,10 +1,10 @@
-#toolbar {
+/*#toolbar {
   position: fixed;
   right: 0;
   top: 50%;
   width: 8em;
   margin-top: -2.5em;
-}
+}*/
 
 /* Viewing articles */
 
@@ -12,14 +12,62 @@
 
 }
 
-container.article-container {
-
+.container.article-container {
+	background: #fafafa;
+	padding: 5px;
 }
 
-container.headline-container {
-	
+.container.headline-container {
+	float: left;
+	width: 55vw;
 }
 
-container.image-container {
-	
+.container.image-container {
+	padding-top: 20px;
+	float: right;
+	width: 25vw;
+	height: 25vh;
 }
+
+a {
+	color: #000000;
+}
+
+.headline {
+	font-family: 'Roboto Slab', serif;
+	font-size: 17px;
+	text-align: left;
+	font-color: #2d0054;
+}
+
+.container.article-break {
+	height: 7px;
+	background: #bdbdbd;
+}
+
+
+
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+
+
+/*body {
+  background: #a9b6c8;
+  color: #fff;
+  font: 14px/18px Arial, sans-serif;
+  text-align: center;
+}
+p {
+  bottom:10px;
+  left:10px;
+  position:absolute;
+}
+a {
+  color:#fff;
+}*/
