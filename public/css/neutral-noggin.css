@@ -1,20 +1,77 @@
-/*#toolbar {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  width: 8em;
-  margin-top: -2.5em;
-}*/
+/* Top Banner and Tool bar */
+
+.top-banner {
+	padding-top: 10px;
+	height: 52px;
+	width: 100%;
+	top: 0px;
+	position: fixed;
+	background-color: #5f3273;
+	border-color: #636363;
+	border-width: 0px 0px 100px 0px;
+}
+
+.container.pad-for-top-banner {
+	width: 100%;
+	height: 52px;
+	top: 0px;
+}
+
+.search-bar {
+	width: 70%;
+	height: 15px;
+	float: right;
+	border-radius: 14px;
+}
+
+.form-control {
+	text-align: left;
+	width: 98%;
+}
+
+/* Search page */
+
+.trending-banner {
+	padding: 5px;
+	height: 75px;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	border: solid;
+	background-color: #D8D8D8;
+	border-color: #5f3273;
+	border-width: 0px 0px 5px 0px;
+}
+
+.trending-banner h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 40px;
+}
+
+.search-bar-search-page {
+	width: 85%;
+	height: 15px;
+ 	margin: 0 auto;
+	border-radius: 14px;
+}
+
+.topics td {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 17px;	
+}
 
 /* Viewing articles */
 
 #article-list {
-
+	width: 100%;
 }
 
 .container.article-container {
 	background: #fafafa;
 	padding: 5px;
+	padding-right: 6px;
+	padding-bottom: 8px;
+	width: 100%;
 }
 
 .container.headline-container {
@@ -27,6 +84,10 @@
 	float: right;
 	width: 25vw;
 	height: 25vh;
+}
+
+img  {
+  border-radius: 15%;
 }
 
 a {
@@ -60,28 +121,3 @@ a {
 
 
 
-
-.cf:before,
-.cf:after {
-    content:"";
-    display:table;
-}
-.cf:after {
-    clear:both;
-}
-
-
-/*body {
-  background: #a9b6c8;
-  color: #fff;
-  font: 14px/18px Arial, sans-serif;
-  text-align: center;
-}
-p {
-  bottom:10px;
-  left:10px;
-  position:absolute;
-}
-a {
-  color:#fff;
-}*/

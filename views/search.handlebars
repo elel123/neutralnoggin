@@ -1,10 +1,21 @@
 <html>
 <head>
 
-	<title>Search Page</title>
+	<title>Neutral Noggin - Search Page</title>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link scripts -->
+	<script src="js/bootstrap.js"> </script>
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap' rel='stylesheet'>
 
 	<!-- position: fixed; allows for things to not scroll  -->
 
@@ -30,69 +41,6 @@
 			border-width: 0px 0px 5px 0px;
 		}
 
-		.subBanner {
-			padding: 0px;
-			height: 30px;
-			width: 100%;
-			overflow: hidden;
-			border: solid;
-			background-color: #D8D8D8;
-			border-color: #5f3273;
-			border-width: 3px 0px 3px 0px;
-		}
-
-		.subBanner h3 {
-			line-height: 0%;
-		}
-
-		.articleBanner {
-			padding: 0px;
-			padding-top: 0px;
-			height: 120px;
-			width: 100%;
-			overflow: hidden;
-			border: solid;
-			background-color: #F2F2F2;
-			border-color: #5f3273;
-			border-width: 3px 0px 3px 0px;		
-		}
-
-		.title {
-			text-align: center;
-		}
-
-		.divider hr {
-			border: 0px;
-		}
-
-		.topicTable th, td {
-			padding: 10px;
-			border: 0;
-
-		}
-
-		.topicTable td:nth-child(2) {
-			text-align: right;
-
-		}
-
-
-		.topicTable table, tr{
-  			border: 1px solid black;
-		}
-
-		.topicTable tr:nth-child(even) {
- 			background-color: #E8E8E8;
-		}	
-
-		.topicTable table {
-			border-spacing: 10px;
-			width: 95%;
-			margin-left: 10px;
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
-
-		}
 
 		.taskbarTable table {
 			margin-left: auto;
@@ -141,11 +89,12 @@
 
 </head>
 <body>
+	<div class="container pad-for-top-banner"></div>
 
-	<div class="myBanner">
-		<form class="searchBar" role="form" method="get" action="/add">
+	<div class="top-banner">
+		<form class="search-bar-search-page" role="form" method="get" action="/add">
 		    <div class="form-group">
-		      <input type="text" class="form-control" id="name" placeholder="Search for Topics" name="name">
+		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
 		    </div>
 		</form>
 		<div class="title">
@@ -176,25 +125,20 @@
 
 	</div>
 
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
+	<div class="trending-banner">
+		<h1>Trending Topics</h1>
+	</div>
+
 	<a class="divider"><hr></a>
 
 	<div class="topics">
-		<div class="subBanner">
-			<div class="title">
-				<h3>Most Searched Topics</h3>
-
+<!-- 		<div class="subBanner">
+				<div class="title">
+					<h3>Most Searched Topics</h3>
+				</div>
 			</div>
-		</div>
 
-		<a class="divider"><hr></a>
+		<a class="divider"><hr></a> -->
 
 		<div class="topicTable">
 			<table>
@@ -247,7 +191,25 @@
 			</div>
 		</div>
 
-		<div id="article1">
+		{{#each articles}}
+		<a href={{URL}}>
+
+			<div class="container article-container">
+
+				<div class="container headline-container">
+					<h3 class="headline">{{headline}}</h3>
+				</div>
+
+				<div class="container image-container">
+					<img src={{imageURL}} class="img-responsive">
+				</div>
+
+			</div>
+
+		</a>
+		{{/each}}
+
+<!-- 		<div id="article1">
 			<a class="divider"><hr></a>
 			<div class="articleBanner">
 				<div class="row">
@@ -278,9 +240,11 @@
 				</div>
 			</div>
 
-		</div>
+		</div> -->
 
 	</div>
+
+
 
 
 
