@@ -1,8 +1,49 @@
 <html>
+<!-- File for home page -->
+
 <head>
-	<title>Test Page</title>
+	<title>Neutral Noggin - Home</title>
+
+	<meta charset="utf-8">
+	<!-- Set size of screen to fit device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link scripts -->
+	<script src="js/bootstrap.js"> </script>
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
 </head>
+
+
+
 <body>
-Begin here (or replace this with any static code already written).
+
+	<div class="container" id="article-list">
+
+		{{#each articles}}
+		<a href={{URL}}>
+
+			<div class="container article-container">
+
+				<div class="container headline-container">
+					<h3 class="headline">{{headline}}</h3>
+				</div>
+
+				<div class="container image-container">
+					<img src={{imageURL}} class="img-responsive">
+				</div>
+
+			</div>
+
+		</a>
+
+		<hr>
+		{{/each}}
+
+	</div>
+
 </body>
 </html>
