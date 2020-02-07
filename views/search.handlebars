@@ -5,7 +5,6 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link scripts -->
 	<script src="js/bootstrap.js"> </script>
@@ -15,7 +14,7 @@
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link google fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
 
 	<!-- position: fixed; allows for things to not scroll  -->
 
@@ -27,30 +26,34 @@
 			padding: 0;
 		}
 
-
-		.myBanner {
-			position: fixed;
-			padding: 5px;
-			height: 70px;
-			width: 100%;
-			top: 0px;
-			overflow: hidden;
-			border: solid;
-			background-color: #D8D8D8;
-			border-color: #5f3273;
-			border-width: 0px 0px 5px 0px;
+		.topicTable th, td {
+			padding: 10px;
+			border: 0;
 		}
-
-
+		.topicTable td:nth-child(2) {
+			text-align: right;
+		}
+		.topicTable table, tr{
+  			border: 1px solid black;
+		}
+		.topicTable tr:nth-child(even) {
+ 			background-color: #E8E8E8;
+		}	
+		.topicTable table {
+			border-spacing: 10px;
+			width: 95%;
+			margin-left: 10px;
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+		}
 		.taskbarTable table {
 			margin-left: auto;
 			margin-right: auto;
 		}
 
-		.form-control {
-			text-align: center;
-			width: 98%;
-
+		.taskbarTable table {
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.title h1 {
@@ -88,6 +91,7 @@
 	</style>
 
 </head>
+
 <body>
 	<div class="container pad-for-top-banner"></div>
 
@@ -97,48 +101,15 @@
 		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
 		    </div>
 		</form>
-		<div class="title">
-			<h1>Trending Topics</h1>
-		</div>
-
 	</div>
 
-	<div class="myTaskbar">
-		<div class="taskbarTable">
-			<table>
-				<tr>
-		        	<td>
-		        		<a href="https://www.google.com/search?q=superbowl">Daily News</a>
-		        	</td>
-		        	<td>
-		        		<a class="selected" href="https://www.google.com/search?q=superbowl">Trending</a>
-		        	</td>
-		        	<td>
-		        		<a href="https://www.google.com/search?q=superbowl">Saved</a>
-		        	</td>
-		        	<td>
-		        		<a href="https://www.google.com/search?q=superbowl">More...</a>
-		        	</td>
-		      	</tr>
-		    </table>
-		</div>
-
-	</div>
-
-	<div class="trending-banner">
+	<div class="sub-banner">
 		<h1>Trending Topics</h1>
 	</div>
 
 	<a class="divider"><hr></a>
 
 	<div class="topics">
-<!-- 		<div class="subBanner">
-				<div class="title">
-					<h3>Most Searched Topics</h3>
-				</div>
-			</div>
-
-		<a class="divider"><hr></a> -->
 
 		<div class="topicTable">
 			<table>
@@ -180,16 +151,15 @@
 		</div>
 	</div>
 
-	<div class="articles">
+	<a class="divider"><hr></a>
 
-		<a class="divider"><hr></a>
-
-		<div class="subBanner">
-			<div class="title">
-				<h3>Trending Articles</h3>
-
-			</div>
+	<div class="sub-banner">
+		<div class="title">
+			<h3>Trending Articles</h3>
 		</div>
+	</div>
+
+	<div class="container article-list">
 
 		{{#each articles}}
 		<a href={{URL}}>
@@ -207,7 +177,12 @@
 			</div>
 
 		</a>
+
+		<div class="container article-break"></div>
+
 		{{/each}}
+
+	</div>
 
 <!-- 		<div id="article1">
 			<a class="divider"><hr></a>
@@ -244,8 +219,29 @@
 
 	</div>
 
+	<hr>
 
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a class="selected" href="https://www.google.com/search?q=superbowl">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
 
+	</div>
 
 
 
