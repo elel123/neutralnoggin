@@ -6,8 +6,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Link scripts -->
-	<script src="js/bootstrap.js"> </script>
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css"rel="stylesheet">
@@ -15,6 +13,12 @@
 
 	<!-- Link google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
+	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/neutral-noggin.js"></script>
+
 
 	<!-- position: fixed; allows for things to not scroll  -->
 
@@ -31,6 +35,9 @@
 </head>
 
 <body>
+
+	<div class="tilt" id="0"></div>
+
 	<div class="container pad-for-top-banner"></div>
 
 	<div class="top-banner">
@@ -100,7 +107,7 @@
 	<div class="container article-list">
 
 		{{#each articles}}
-		<a href={{URL}}>
+		<a class="container link search" id="{{tilt}}" href={{URL}} target="_blank">
 
 			<div class="container article-container">
 
