@@ -1,0 +1,90 @@
+<html>
+<!-- File for home page -->
+
+<head>
+	<title>Neutral Noggin - Home</title>
+
+	<meta charset="utf-8">
+	<!-- Set size of screen to fit device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link scripts -->
+	<script src="js/bootstrap.js"> </script>
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+	<div class="container pad-for-top-banner"></div>
+
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a class="selected" href="home">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a href="search">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a href="saved">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a href="more">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+
+	</div>
+
+	<div class="sub-banner">
+		<h1>Noggin Login</h1>
+	</div>
+
+	<div class="login-fields">
+		<form class="search-bar" role="form" method="get" action="/add">
+		    <div class="form-group">
+		      <input type="text" class="form-control" placeholder="Username">
+		    </div>
+		 </form>
+		 <hr>
+		 <hr>
+		 <form class="search-bar" role="form" method="get" action="/add">
+		    <div class="form-group">
+		      <input class="form-control" placeholder="Password"  type="password">
+		    </div>
+		 </form>
+	</div>
+
+	<hr>
+	<hr>
+
+	<div id ="container login-buttons">
+
+		<div id ="done-button">
+			<a href="more">
+				<button type="button" >Done</button>
+			</a>
+		</div>
+
+		<div id ="cancel-button">
+			<a href="more">
+				<button type="button">Cancel</button>
+			</a>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

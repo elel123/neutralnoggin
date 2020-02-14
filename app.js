@@ -13,6 +13,7 @@ var index = require('./routes/index.js');
 var search = require('./routes/search.js');
 var saved = require('./routes/saved.js');
 var more = require('./routes/more.js');
+var login = require('./routes/login.js');
 
 // Example route
 // var user = require('./routes/user');
@@ -46,6 +47,7 @@ app.get('/home', index.view);
 app.get('/search', search.view);
 app.get('/saved', saved.view);
 app.get('/more', more.view);
+app.get('/login', login.view)
 
 
 // Example route
