@@ -42,7 +42,7 @@ if ('development' == app.get('env')) {
 
 
 // Add routes below! pt.2
-app.get('/', index.view);
+app.get('/', index.viewStart);
 app.get('/home', index.view);
 app.get('/search', search.view);
 app.get('/saved', saved.view);
