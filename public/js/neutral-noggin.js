@@ -14,7 +14,12 @@ var tiltCounter = 0;
  */
 function initializePage() {
 	console.log("Javascript connected!");
-	tiltCounter = parseInt($(".tilt").attr('id'));
+	tiltCounter = $(".tilt").attr('id');
+	console.log("extracted tilt: " + tiltCounter);
+
+	tiltCounter = parseInt(tiltCounter);
+
+	updateTaskbar(tiltCounter);
 
 
 	// register a click listener 
@@ -30,10 +35,15 @@ function tiltCalculator(tilt) {
 	tiltCounter = tiltCounter + parseInt(tilt);
 	console.log("Tilt Counter is at: " + tiltCounter);
 
-	$(".tilt").attr('id', tiltCounter);
-	var assignedTilt = $(".tilt").attr('id');
+	updateTaskbar(tiltCounter);
 
-	console.log("html tilt: " + assignedTilt);
-
-	
 } 
+
+
+function updateTaskbar(tilt) {
+	//update the hrefs to reflect correct tilt
+	$("#taskButton1").attr('href', 'home?ut=' + tilt);
+	$("#taskButton2").attr('href', 'search?ut=' + tilt);
+	$("#taskButton3").attr('href', 'saved?' + tilt);
+	$("#taskButton4").attr('href', 'more?' + tilt);
+}

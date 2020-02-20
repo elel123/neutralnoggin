@@ -7,5 +7,7 @@ var data = require("../data.json");
 
 exports.view = function(request, response){
 	// console.log(data);
-	response.render('search.handlebars', data);
+	var requestTilt = request.query.ut;
+	data['userTilt'] = parseInt(requestTilt);
+	response.render('search', data);
 };
