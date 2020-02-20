@@ -14,6 +14,7 @@ var search = require('./routes/search.js');
 var saved = require('./routes/saved.js');
 var more = require('./routes/more.js');
 var login = require('./routes/login.js');
+var scale = require('./routes/scale.js');
 
 // Example route
 // var user = require('./routes/user');
@@ -48,6 +49,7 @@ app.get('/search', search.view);
 app.get('/saved', saved.view);
 app.get('/more', more.view);
 app.get('/login', login.view)
+app.get('/scale', scale.view)
 
 
 // Example route

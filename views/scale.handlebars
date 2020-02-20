@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Neutral Noggin - More</title>
+	<title>Neutral Noggin - Your Scale</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,8 @@
 
 	<!-- Link scripts -->
 	<script src="js/bootstrap.js"> </script>
+
+
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css"rel="stylesheet">
@@ -16,6 +18,7 @@
 
 	<!-- Link google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
 
 	<!-- Script for linking tooltaskbars html-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,8 +28,9 @@
 		});
 	</script>
 
-
 </head>
+
+
 
 <body>
 	<div id="topbanner"></div>
@@ -50,43 +54,35 @@
 
 
 
-
 	<div class="container" id="more-page">
 
-		<h4 class="title">Settings and More</h4>
+		<h4 class="title">Your Noggin Scale</h4>
 
 		<div class="container article-break"></div>
 
 		<div class="container setting">
-			<p class="setting-text">Account</p>
+			<p class="setting-text" style="font-size: 18px; width: 100%;">Your tilt is: 5!</p>
 
-			<div id="login">
-				<a href="login">
-					<button type="button" >Login</button>
-				</a>
-			</div>
-		</div>
+			<div class="container" style="height: 13px"></div>
 
-
-		<div class="container small-break"></div>
-
-
-		<div class="container setting">
-			<p class="setting-text">Your Noggin Scale</p>
-
-			<div id="login">
-				<a href="scale">
-					<button type="button">View</button>
-				</a>
-			</div>
+			<p style="font-size: 13px; color: #787878;">A negative number indicates left-leaning bias; positive indicates right-learning. The closer to zero your tilt is, the more neutral your consumption of information is, and the better!</p>
 		</div>
 
 		<div class="container small-break"></div>
-
-
 
 	</div>
 
+
+
+
+
+
+	<div class="container" id="scale-image">
+	</div>
+
+	<script type="text/javascript">
+		$( "#scale-image" ).append( "<p>Test!!</p>" );
+	</script>
 
 
 
