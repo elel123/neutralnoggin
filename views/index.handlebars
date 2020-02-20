@@ -27,7 +27,7 @@
 
 <body>
 
-	<div class="tilt" id="0"></div>
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
 
 	<div class="container pad-for-top-banner"></div>
 
@@ -44,16 +44,16 @@
 			<table>
 				<tr>
 		        	<td>
-		        		<a class="selected" href="home">Daily News</a>
+		        		<a id="taskButton1" class="selected" href="home?ut=0">Daily News</a>
 		        	</td>
 		        	<td>
-		        		<a href="search">Trending</a>
+		        		<a id="taskButton2" href="search?ut=0">Trending</a>
 		        	</td>
 		        	<td>
-		        		<a href="saved">Saved</a>
+		        		<a id="taskButton3" href="saved?0">Saved</a>
 		        	</td>
 		        	<td>
-		        		<a href="more">More...</a>
+		        		<a id="taskButton4" href="more?0">More...</a>
 		        	</td>
 		      	</tr>
 		    </table>
