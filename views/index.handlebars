@@ -22,44 +22,41 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/neutral-noggin.js"></script>
 
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#topbanner").load("topbanner.html");
+		});
+	</script>
+
 </head>
 
 
 <body>
-
-	<div class="tilt" id="0"></div>
-
-	<div class="container pad-for-top-banner"></div>
-
-	<div class="top-banner">
-		<form class="search-bar" role="form" method="get" action="/add">
-		    <div class="form-group">
-		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
-		    </div>
-		 </form>
-	</div>
-
+	<div id="topbanner"></div>
 	<div class="myTaskbar">
 		<div class="taskbarTable">
 			<table>
 				<tr>
 		        	<td>
-		        		<a class="selected" href="home">Daily News</a>
-		        	</td>
-		        	<td>
-		        		<a href="search">Trending</a>
+		        		<a href="home" class="selected">Daily News</a>
 		        	</td>
 		        	<td>
 		        		<a href="saved">Saved</a>
 		        	</td>
 		        	<td>
-		        		<a href="more">More...</a>
+		        		<a href="more">More</a>
 		        	</td>
 		      	</tr>
 		    </table>
 		</div>
-
 	</div>
+
+
+	<div class="tilt" id="0"></div>
+
+
 
 	<div class="container" id="article-list">
 
@@ -85,6 +82,8 @@
 		{{/each}}
 
 	</div>
+	<hr><hr>
+
 
 </body>
 </html>

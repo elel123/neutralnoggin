@@ -2,7 +2,7 @@
 <!-- File for home page -->
 
 <head>
-	<title>Neutral Noggin - Home</title>
+	<title>Neutral Noggin - Login</title>
 
 	<meta charset="utf-8">
 	<!-- Set size of screen to fit device-->
@@ -18,57 +18,69 @@
 	<!-- Link google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
 
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#topbanner").load("topbanner.html");
+		});
+	</script>
+
+
 </head>
 
 
 <body>
-	<div class="container pad-for-top-banner"></div>
-
+	<div id="topbanner"></div>
 	<div class="myTaskbar">
-		<div class="taskbarTable">
-			<table>
-				<tr>
-		        	<td>
-		        		<a class="selected" href="home">Daily News</a>
-		        	</td>
-		        	<td>
-		        		<a href="search">Trending</a>
-		        	</td>
-		        	<td>
-		        		<a href="saved">Saved</a>
-		        	</td>
-		        	<td>
-		        		<a href="more">More...</a>
-		        	</td>
-		      	</tr>
-		    </table>
-		</div>
-
+			<div class="taskbarTable">
+				<table>
+					<tr>
+			        	<td>
+			        		<a href="home">Daily News</a>
+			        	</td>
+			        	<td>
+			        		<a href="saved">Saved</a>
+			        	</td>
+			        	<td>
+			        		<a href="more" class="selected">More</a>
+			        	</td>
+			      	</tr>
+			    </table>
+			</div>
 	</div>
+
+
 
 	<div class="sub-banner">
 		<h1>Noggin Login</h1>
 	</div>
 
-	<div class="login-fields">
+	<div class="container login-fields">
+		<p class="setting-text">Username</p>
+
 		<form class="search-bar" role="form" method="get" action="/add">
 		    <div class="form-group">
-		      <input type="text" class="form-control" placeholder="Username">
+		      <input type="text" class="form-control">
 		    </div>
 		 </form>
-		 <hr>
-		 <hr>
-		 <form class="search-bar" role="form" method="get" action="/add">
+
+		<div class="container" style="height: 40px"></div>
+
+		<p class="setting-text">Password</p>
+		<form class="search-bar" role="form" method="get" action="/add">
 		    <div class="form-group">
-		      <input class="form-control" placeholder="Password"  type="password">
+		      <input class="form-control" type="password">
 		    </div>
-		 </form>
+		</form>
 	</div>
 
 	<hr>
-	<hr>
 
-	<div id ="container login-buttons">
+
+
+
+	<div class="container login-buttons">
 
 		<div id ="done-button">
 			<a href="more">

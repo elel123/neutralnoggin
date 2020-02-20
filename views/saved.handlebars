@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Neutral Noggin - Search Page</title>
+	<title>Neutral Noggin - Saved</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,20 @@
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link google fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
 
-	<!-- position: fixed; allows for things to not scroll  -->
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#topbanner").load("topbanner.html");
+		});
+	</script>
 
 </head>
 
 <body>
+	<div id="topbanner"></div>
 	<div class="myTaskbar">
 		<div class="taskbarTable">
 			<table>
@@ -30,17 +37,17 @@
 		        		<a href="home">Daily News</a>
 		        	</td>
 		        	<td>
-		        		<a href="search">Trending</a>
+		        		<a href="saved" class="selected">Saved</a>
 		        	</td>
 		        	<td>
-		        		<a class="selected" href="saved">Saved</a>
-		        	</td>
-		        	<td>
-		        		<a href="more">More...</a>
+		        		<a href="more">More</a>
 		        	</td>
 		      	</tr>
 		    </table>
 		</div>
-
 	</div>
+
+
+
 </body>
+</html>
