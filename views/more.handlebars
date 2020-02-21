@@ -8,7 +8,9 @@
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.js"> </script>
+
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css"rel="stylesheet">
@@ -31,21 +33,21 @@
 <body>
 	<div id="topbanner"></div>
 	<div class="myTaskbar">
-			<div class="taskbarTable">
-				<table>
-					<tr>
-			        	<td>
-			        		<a href="home">Daily News</a>
-			        	</td>
-			        	<td>
-			        		<a href="saved">Saved</a>
-			        	</td>
-			        	<td>
-			        		<a href="more" class="selected">More</a>
-			        	</td>
-			      	</tr>
-			    </table>
-			</div>
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+                		<a id="taskButton1" href="home?ut=0">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton3" href="saved?ut=0">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton4" href="more?0" class="selected">More</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
 	</div>
 
 
@@ -75,7 +77,7 @@
 			<p class="setting-text">Your Noggin Scale</p>
 
 			<div id="login">
-				<a href="scale">
+				<a href="scale?ut=0" id="scaleButtonFromMore">
 					<button type="button">View</button>
 				</a>
 			</div>
