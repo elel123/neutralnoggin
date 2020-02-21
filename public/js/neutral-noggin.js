@@ -22,12 +22,32 @@ function initializePage() {
 	updateTaskbar(tiltCounter);
 
 
+	//Attempt to extract the user name
+	var username = $(".userlogin").attr('id');
+	console.log("hello " + username);
+
+
 	// register a click listener 
 	$('.container.link').click(function() {
 		var id = $(this).attr('id');
 		//console.log(this);
 		tiltCalculator(id);
 	});
+
+	//Track log in/out status for more page
+	var logMsg = $('.logMsg').attr('id');
+	if (logMsg == "no one. Login?") {
+		$('.logoutButton').hide();
+	}
+
+	//Checking if Done button is clicked in login screen
+	$('#done-button').click(function(e) {
+		$('.login-buttons').append("<p>Logging you in!</p>")
+	});
+
+
+
+
 }
 
 function tiltCalculator(tilt) {
@@ -42,8 +62,12 @@ function tiltCalculator(tilt) {
 
 function updateTaskbar(tilt) {
 	//update the hrefs to reflect correct tilt
-	$("#taskButton1").attr('href', 'home?ut=' + tilt);
-	$("#taskButton2").attr('href', 'search?ut=' + tilt);
-	$("#taskButton3").attr('href', 'saved?' + tilt);
-	$("#taskButton4").attr('href', 'more?' + tilt);
+	$("#taskButtonH").attr('href', 'home?ut=' + tilt);
+	$("#taskButtonS").attr('href', 'saved?ut=' + tilt);
+	$("#taskButtonM").attr('href', 'more?ut=' + tilt);
+	$("#loginButton").attr('href', 'login?ut=' + tilt);
+	$("#scaleButton").attr('href', 'scale?ut=' + tilt);
+	$("#cancelButton").attr('href', 'more?ut=' + tilt);
+	$("#logoutButton").attr('href', 'homeLogout?ut=' + tilt);
+	
 }

@@ -38,5 +38,24 @@
 		}
 	],
 
-	"userTilt" : 0
+	"userTilt" : 0,
+
+	"profiles": [
+		{
+			"name": "Elton",
+			"password": "12345",
+			"loggedIn": false,
+			"tilt": 0,
+			"saved" : []
+		},
+		{
+			"name": "Titan",
+			"password": "12345",
+			"loggedIn": false,
+			"tilt": -5,
+			"saved" : []			
+		}
+	],
+
+	"loggedInProfile": "no one. Login?"
 }

@@ -236,6 +236,7 @@ a {
 	font-size: 16px;
 	font-family: 'Cabin', sans-serif;
 	float: left;
+	text-align: left;
 }
 
 .container.setting {

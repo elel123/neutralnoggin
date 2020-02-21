@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
-	<!-- Link scripts -->
-	<script src="js/bootstrap.js"> </script>
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css"rel="stylesheet">
@@ -25,23 +23,32 @@
 		});
 	</script>
 
+	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/neutral-noggin.js"></script>
+
 
 </head>
 
 <body>
 	<div id="topbanner"></div>
+
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
+	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+
 	<div class="myTaskbar">
 			<div class="taskbarTable">
 				<table>
 					<tr>
 			        	<td>
-			        		<a href="home">Daily News</a>
+			        		<a id="taskButtonH" href="home?ut=0">Daily News</a>
 			        	</td>
 			        	<td>
-			        		<a href="saved">Saved</a>
+			        		<a id="taskButtonS" href="saved?ut=0">Saved</a>
 			        	</td>
 			        	<td>
-			        		<a href="more" class="selected">More</a>
+			        		<a id="taskButtonM" href="more?ut=0" class="selected">More</a>
 			        	</td>
 			      	</tr>
 			    </table>
@@ -54,6 +61,13 @@
 	<div class="container" id="more-page">
 
 		<h4 class="title">Settings and More</h4>
+		<p class="logMsg" id="{{loggedInProfile}}">(logged in as {{loggedInProfile}})</p>
+
+		<div id="login">
+			<a id="logoutButton" href="homeLogout?ut=0">
+				<button class="logoutButton" type="button">Logout</button>
+			</a>
+		</div>		
 
 		<div class="container article-break"></div>
 
@@ -61,7 +75,7 @@
 			<p class="setting-text">Account</p>
 
 			<div id="login">
-				<a href="login">
+				<a id="loginButton" href="login?ut=0">
 					<button type="button" >Login</button>
 				</a>
 			</div>
@@ -75,7 +89,7 @@
 			<p class="setting-text">Your Noggin Scale</p>
 
 			<div id="login">
-				<a href="scale">
+				<a id="scaleButton" href="scale?ut=0">
 					<button type="button">View</button>
 				</a>
 			</div>
