@@ -69,5 +69,36 @@ function updateTaskbar(tilt) {
 	$("#scaleButton").attr('href', 'scale?ut=' + tilt);
 	$("#cancelButton").attr('href', 'more?ut=' + tilt);
 	$("#logoutButton").attr('href', 'homeLogout?ut=' + tilt);
-	
+	$("#scaleButtonFromMore").attr('href', 'scale?ut=' + tilt);
+}
+
+
+
+function getScaleImage() {
+	tiltCounter = $(".tilt").attr('id');
+	tiltCounter = parseInt(tiltCounter);
+	console.log("extracted tilt for scale: " + tiltCounter);
+
+
+	if (tiltCounter == 0 || (tiltCounter > -0.5 && tiltCounter < 0.5)) {
+		// neutral
+		return "<img src=\"scale_imgs/balanced-scale.PNG\" class=\"img-responsive scale\">";
+
+	} else if (tiltCounter <= -0.5 && tiltCounter >= -2) {
+		// medium left
+		return "<img src=\"scale_imgs/med-left-scale.PNG\" class=\"img-responsive scale\">";
+
+	} else if (tiltCounter >= 0.5 && tiltCounter <= 2) {
+		// medium right
+		return "<img src=\"scale_imgs/med-right-scale.PNG\" class=\"img-responsive scale\">";
+
+	} else if (tiltCounter < -2) {
+		// heavy left
+		return "<img src=\"scale_imgs/heavy-left-scale.PNG\" class=\"img-responsive scale\">";
+
+	} else if (tiltCounter > 2) {
+		// heavy left
+		return "<img src=\"scale_imgs/heavy-right-scale.PNG\" class=\"img-responsive scale\">";
+	}
+
 }

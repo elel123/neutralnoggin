@@ -258,3 +258,22 @@ a {
 
 
 /*scale page*/
+
+#scale-image {
+	margin: auto;
+	width: 150px;
+	height: 130px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.img-responsive.scale {
+	width: 180px;
+	height: 120px;
+}
+
+
