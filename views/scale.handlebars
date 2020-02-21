@@ -8,7 +8,9 @@
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="js/bootstrap.js"> </script>
+	<script src="/js/neutral-noggin.js"></script>
 
 
 	<!-- Link css files -->
@@ -33,24 +35,28 @@
 
 
 <body>
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
+
 	<div id="topbanner"></div>
 	<div class="myTaskbar">
-			<div class="taskbarTable">
-				<table>
-					<tr>
-			        	<td>
-			        		<a href="home">Daily News</a>
-			        	</td>
-			        	<td>
-			        		<a href="saved">Saved</a>
-			        	</td>
-			        	<td>
-			        		<a href="more" class="selected">More</a>
-			        	</td>
-			      	</tr>
-			    </table>
-			</div>
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+                		<a id="taskButton1" href="home?ut=0">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton3" href="saved?ut=0">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton4" href="more?0" class="selected">More</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
 	</div>
+
+
 
 
 
@@ -61,11 +67,11 @@
 		<div class="container article-break"></div>
 
 		<div class="container setting">
-			<p class="setting-text" style="font-size: 18px; width: 100%;">Your tilt is: 5!</p>
+			<p class="setting-text" style="font-size: 18px; width: 100%;">Your tilt is: {{userTilt}}!</p>
 
 			<div class="container" style="height: 13px"></div>
 
-			<p style="font-size: 13px; color: #787878;">A negative number indicates left-leaning bias; positive indicates right-learning. The closer to zero your tilt is, the more neutral your consumption of information is, and the better!</p>
+			<p style="font-size: 13px; color: #787878;">A negative number indicates you've read more articles of left-leaning bias; positive indicates right-leaning. The closer to zero your tilt number is, the more balanced your consumption of information is, and the better!</p>
 		</div>
 
 		<div class="container small-break"></div>
@@ -75,13 +81,13 @@
 
 
 
+	<div class="container" style="height: 20px"></div>
 
-
-	<div class="container" id="scale-image">
+	<div class="container scale-image" id="scale-image">
 	</div>
 
 	<script type="text/javascript">
-		$( "#scale-image" ).append( "<p>Test!!</p>" );
+		$( "#scale-image" ).append(getScaleImage());
 	</script>
 
 
