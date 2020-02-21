@@ -7,10 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/neutral-noggin.css" rel="stylesheet">
 
-	<!-- Link scripts -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.js"> </script>
-	
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css"rel="stylesheet">
@@ -21,6 +17,13 @@
 
 	<!-- Script for linking tooltaskbars html-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/neutral-noggin.js"></script>
+
+
 	<script>
 		$(document).ready(function(){
 			$("#topbanner").load("topbanner.html");
@@ -31,18 +34,22 @@
 
 <body>
 	<div id="topbanner"></div>
+
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
+	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+
 	<div class="myTaskbar">
 		<div class="taskbarTable">
 			<table>
 				<tr>
 		        	<td>
-                		<a id="taskButton1" href="home?ut=0">Daily News</a>
+		        		<a id="taskButtonH" href="home?ut=0">Daily News</a>
 		        	</td>
 		        	<td>
-		        		<a id="taskButton3" href="saved?ut=0" class="selected">Saved</a>
+		        		<a id="taskButtonS" href="saved?ut=0" class="selected">Saved</a>
 		        	</td>
 		        	<td>
-		        		<a id="taskButton4" href="more?0">More</a>
+		        		<a id="taskButtonM" href="more?ut=0">More</a>
 		        	</td>
 		      	</tr>
 		    </table>

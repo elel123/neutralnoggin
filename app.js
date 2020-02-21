@@ -45,9 +45,11 @@ if ('development' == app.get('env')) {
 // Add routes below! pt.2
 app.get('/', index.viewStart);
 app.get('/home', index.view);
+app.get('/homeLogout', index.viewOut);
 app.get('/search', search.view);
 app.get('/saved', saved.view);
 app.get('/more', more.view);
+app.get('/morelogin', more.login);
 app.get('/login', login.view)
 app.get('/scale', scale.view)
 
