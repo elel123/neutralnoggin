@@ -34,11 +34,12 @@ exports.view = function(request, response){
 };
 
 exports.viewStart = function(request, response){
+	data["altView"] = false;
 	response.render('index', data);
 };
 
 exports.viewStartAlt = function(request, response){
-	data["altView"] = false;
+	data["altView"] = true;
 	response.render('index', data);
 };
 

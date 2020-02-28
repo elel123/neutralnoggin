@@ -57,6 +57,10 @@ app.get('/scale', scale.view)
 
 app.get('/getData', index.getData);
 
+// A/B Testing
+app.get('/home_page_A', index.viewStart);
+app.get('/home_page_B', index.viewStartAlt);
+
 
 // Example route
 // app.get('/users', user.list);
