@@ -5,17 +5,29 @@
 var data = require("../data.json");
 
 exports.view = function(request, response){
-	// console.log(data);
+
 	var requestTilt = request.query.ut;
-	data['userTilt'] = parseInt(requestTilt);
+	var requestUser = request.query.user;
 
 	//Check which profile to update
 	var i;
 	var profilesArr = data["profiles"];
 	for (i = 0; i < profilesArr.length; i++) {
-		if (profilesArr[i]["loggedIn"]) {
+		if (profilesArr[i]["name"] == requestUser) {
 			profilesArr[i]["tilt"] = parseInt(requestTilt);
 		}
 	}
-	response.render('login.handlebars', data);
+
+	//Make data copy so multiple people can log in w/o conflicting data
+	var renderDataCopy = JSON.parse(JSON.stringify(data));
+
+	renderDataCopy['userTilt'] = parseInt(requestTilt);
+
+	if (requestUser == "not-logged-in") {
+		renderDataCopy["loggedInProfile"] = "no one. Login?";
+	} else {
+		renderDataCopy["loggedInProfile"] = requestUser;
+	}
+
+	response.render('login.handlebars', renderDataCopy);
 };

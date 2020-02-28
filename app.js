@@ -49,9 +49,11 @@ app.get('/homeLogout', index.viewOut);
 app.get('/search', search.view);
 app.get('/saved', saved.view);
 app.get('/more', more.view);
-app.get('/morelogin', more.login);
+app.post('/morelogin', more.login);
 app.get('/login', login.view)
 app.get('/scale', scale.view)
+
+app.get('/getData', index.getData);
 
 
 // Example route

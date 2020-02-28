@@ -7,54 +7,48 @@ var data = require("../data.json");
 
 exports.view = function(request, response){
 	var requestTilt = request.query.ut;
-	data['userTilt'] = parseInt(requestTilt);
+	var requestUser = request.query.user;
 
 	//Check which profile to update
 	var i;
 	var profilesArr = data["profiles"];
 	for (i = 0; i < profilesArr.length; i++) {
-		if (profilesArr[i]["loggedIn"]) {
+		if (profilesArr[i]["name"] == requestUser) {
 			profilesArr[i]["tilt"] = parseInt(requestTilt);
 		}
 	}
 
- 	response.render('more', data);
+	//Make data copy so multiple people can log in w/o conflicting data
+	var renderDataCopy = JSON.parse(JSON.stringify(data));
+
+	renderDataCopy['userTilt'] = parseInt(requestTilt);
+
+	if (requestUser == "not-logged-in") {
+		renderDataCopy["loggedInProfile"] = "no one. Login?";
+	} else {
+		renderDataCopy["loggedInProfile"] = requestUser;
+	}
+
+	response.render('more', renderDataCopy);
 };
 
 
 
 exports.login = function(request, response){
-	var username = request.query.username;
-	var password = request.query.password;
+	var username = request.body.name;
 
 	var i;
 	var profilesArr = data["profiles"];
 	var requestTilt = 0;
-	var profileExists = false;
 	for (i = 0; i < profilesArr.length; i++) {
 
-		if (profilesArr[i]["name"] == username && 
-			profilesArr[i]["password"] == password) {
+		if (profilesArr[i]["name"] == username) {
 
 			requestTilt = profilesArr[i]["tilt"];
 			profilesArr[i]["loggedIn"] = true;
 			data["loggedInProfile"] = username;
-			profileExists = true;
 		}
-	}
-
-	if (profileExists == false) {
-		var newProfile = {				
-			"name": username,
-			"password": password,
-			"loggedIn": true,
-			"tilt": 0, 
-			"saved" : []
-		}
-		profilesArr.push(newProfile);
-		data["loggedInProfile"] = "Newly Logger";
 	}
 
 	data['userTilt'] = requestTilt; 
- 	response.render('more', data);
 }
