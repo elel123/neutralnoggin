@@ -1,0 +1,279 @@
+/* Top Banner and Tool bar */
+
+.top-banner {
+	padding-top: 10px;
+	height: 52px;
+	width: 100%;
+	top: 0px;
+	position: fixed;
+	background-color: #a329cc;
+	border-color: #636363;
+	border-width: 0px 0px 100px 0px;
+}
+
+.container.pad-for-top-banner {
+	width: 100%;
+	height: 52px;
+	top: 0px;
+	margin: auto;
+}
+
+.app-title {
+	width: 60%;
+	height: 15px;
+	float: right;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	color: black;
+	margin: auto;
+	margin-bottom: 10px;
+	font-style: bold;
+	margin-right: 20px;
+}
+
+
+.search-bar {
+	width: 70%;
+	height: 15px;
+	float: right;
+	border-radius: 14px;
+}
+
+.form-control {
+	text-align: left;
+	width: 98%;
+}
+
+.scale-page-link {
+	width: 46px;
+	height: 46px;
+	margin: auto;
+	margin-bottom: 10px;
+	float: left;
+	margin-left: 32px;
+}
+
+
+/* Search page */
+
+.sub-banner {
+	padding: 5px;
+	height: 75px;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	border: solid;
+	background-color: #D8D8D8;
+	border-color: #5f3273;
+	border-width: 0px 0px 1px 0px;
+}
+
+.sub-banner * {
+	font-family: 'Cabin', sans-serif;
+	font-size: 34px;
+}
+
+.search-bar-search-page {
+	width: 85%;
+	height: 15px;
+ 	margin: 0 auto;
+	border-radius: 14px;
+}
+
+.topics td {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;	
+}
+
+
+/* Viewing articles */
+
+.container.article-list {
+	width: 100%;
+}
+
+.container.article-container {
+	background: #fafafa;
+	padding-right: 3px;
+	width: 100%;
+}
+
+.container.headline-container {
+	float: left;
+	width: 60vw;
+}
+
+.container.image-container {
+	padding-top: 20px;
+	float: right;
+	max-width: 25vw;
+	max-height: 25vh;
+	min-width: 100px;
+	min-height: 100px;
+}
+
+img  {
+  border-radius: 15%;
+}
+
+a {
+	color: #000000;
+}
+
+.headline {
+	font-family: 'Roboto Slab', serif;
+	font-size: 16px;
+	text-align: left;
+	font-color: #2d0054;
+}
+
+.container.article-break {
+	height: 5px;
+	background: #bdbdbd;
+}
+
+.myTaskbar {
+  position: fixed !important;
+  font-family: 'Montserrat', sans-serif;
+  bottom: 0;
+  padding: 5px;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  border: solid;
+  background-color: #C2C2C2;
+  border-width: 0px 0px 0px 0px;
+}
+
+/* Search page */
+
+.taskbarTable table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selected {
+  font-weight: bolder;
+  color:  #a329cc;
+}
+
+.topicTable th, td {
+	padding: 10px;
+	border: 0;
+}
+.topicTable td:nth-child(2) {
+	text-align: right;
+}
+.topicTable table, tr{
+		border: 1px solid black;
+}
+.topicTable tr:nth-child(even) {
+		background-color: #E8E8E8;
+}	
+.topicTable table {
+	border-spacing: 10px;
+	width: 95%;
+	margin-left: 10px;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+}
+
+.title h1 {
+	line-height: 40%;	
+}
+
+.articleTitles h4 {
+	margin: 10px;
+	text-align: left;
+	max-width: 300px;
+	max-height: 100px;
+	
+}
+
+.column {
+	float: left;
+	width: 200px;
+	padding: 5px;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Login page */
+.container.login-fields {
+	max-height:60px;
+	max-width: 100vw;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.container.login-buttons {
+	margin-left: 10px;
+}
+
+#done-button , #cancel-button {
+	display:inline-block;
+}
+
+
+/*more page*/
+
+.title {
+	font-family: 'Cabin', sans-serif;
+	color: #8f8f8f;
+}
+
+#more-page {
+	margin: 5px;
+	margin-left: 2px;
+	margin-top: 5px;
+}
+
+.setting-text {
+	font-size: 16px;
+	font-family: 'Cabin', sans-serif;
+	float: left;
+	text-align: left;
+}
+
+.container.setting {
+	align-content: left;
+	margin-bottom:  10px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.container.small-break {
+	height: 2px;
+	background:#bababa;
+}
+
+#login {
+  	margin-left: 30px;
+	display: inline-block;
+}
+
+
+/*scale page*/
+
+#scale-image {
+	margin: auto;
+	width: 150px;
+	height: 130px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.img-responsive.scale {
+	width: 180px;
+	height: 120px;
+}
+
+

@@ -1,0 +1,114 @@
+<html>
+<!-- File for home page -->
+
+<head>
+	<title>Neutral Noggin - Login</title>
+
+	<meta charset="utf-8">
+	<!-- Set size of screen to fit device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#topbanner").load("topbanner.html");
+		});
+	</script>
+
+	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/neutral-noggin.js"></script>
+
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+
+</head>
+
+
+<body>
+	<div id="topbanner"></div>
+
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
+	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+
+	<div class="myTaskbar">
+			<div class="taskbarTable">
+				<table>
+					<tr>
+			        	<td>
+			        		<a id="taskButtonH" href="home?ut=0">Daily News</a>
+			        	</td>
+			        	<td>
+			        		<a id="taskButtonS" href="saved?ut=0">Saved</a>
+			        	</td>
+			        	<td>
+			        		<a id="taskButtonM" href="more?ut=0" class="selected">More</a>
+			        	</td>
+			      	</tr>
+			    </table>
+			</div>
+
+	</div>
+
+
+
+	<div class="sub-banner">
+		<h1>Noggin Login</h1>
+	</div>
+
+	<div class="container login-fields">
+		<p class="setting-text">Username</p>
+
+		<form class="search-bar" id="login" role="form" method="get">
+		    <div class="form-group">
+		      <input type="text" class="form-control" id="username" placeholder="Name">
+		    </div>
+
+			<p class="setting-text">Password</p>
+		    <div class="form-group">
+		      <input class="form-control" id="password" type="password" placeholder="Password">
+		    </div>
+
+			<div id ="done-button">
+				<input type="submit" id="submitBtn" class="btn btn-default" value="Done">
+			</div>
+			    
+		</form>
+
+		<div class="container" style="height: 40px"></div>
+
+	</div>
+
+	<hr>
+
+
+
+
+	<div class="container login-buttons">
+
+		<div id ="cancel-button">
+			<a id="cancelButton" href="more?ut=0">
+				<button type="button">Cancel</button>
+			</a>
+		</div>
+
+		<hr>
+		<!-- <p>Or login through Facebook!</p> -->
+		<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> -->
+
+	</div>
+
+
+
+</body>
+</html>

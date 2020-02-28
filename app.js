@@ -8,7 +8,14 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
+// Add routes below! pt.1
+var index = require('./routes/index.js');
+var search = require('./routes/search.js');
+var saved = require('./routes/saved.js');
+var more = require('./routes/more.js');
+var login = require('./routes/login.js');
+var scale = require('./routes/scale.js');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -34,7 +41,21 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+
+// Add routes below! pt.2
+app.get('/', index.viewStart);
+app.get('/home', index.view);
+app.get('/homeLogout', index.viewOut);
+app.get('/search', search.view);
+app.get('/saved', saved.view);
+app.get('/more', more.view);
+app.post('/morelogin', more.login);
+app.get('/login', login.view)
+app.get('/scale', scale.view)
+
+app.get('/getData', index.getData);
+
+
 // Example route
 // app.get('/users', user.list);
 

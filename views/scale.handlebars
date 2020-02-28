@@ -1,0 +1,97 @@
+<html>
+<head>
+
+	<title>Neutral Noggin - Your Scale</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="js/bootstrap.js"> </script>
+	<script src="/js/neutral-noggin.js"></script>
+
+
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
+
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#topbanner").load("topbanner.html");
+		});
+	</script>
+
+</head>
+
+
+
+<body>
+	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
+	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+
+	<div id="topbanner"></div>
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+                		<a id="taskButtonH" href="home?ut=0">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButtonS" href="saved?ut=0">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButtonM" href="more?0" class="selected">More</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="container" id="more-page">
+
+		<h4 class="title">Your Noggin Scale</h4>
+
+		<div class="container article-break"></div>
+
+		<div class="container setting">
+			<p class="setting-text" style="font-size: 18px; width: 100%;">Your tilt is: {{userTilt}}!</p>
+
+			<div class="container" style="height: 13px"></div>
+
+			<p style="font-size: 13px; color: #787878;">A negative number indicates you've read more articles of left-leaning bias; positive indicates right-leaning. The closer to zero your tilt number is, the more balanced your consumption of information is, and the better!</p>
+		</div>
+
+		<div class="container small-break"></div>
+
+	</div>
+
+
+
+
+	<div class="container" style="height: 20px"></div>
+
+	<div class="container scale-image" id="scale-image">
+	</div>
+
+	<script type="text/javascript">
+		$( "#scale-image" ).append(getScaleImage());
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<html>
+<head>
+
+	<title>Neutral Noggin - Search Page</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link css files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css"rel="stylesheet">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
+
+	<!-- Link google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
+
+	<!-- Link scripts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/neutral-noggin.js"></script>
+
+
+	<!-- position: fixed; allows for things to not scroll  -->
+
+	<style>
+
+		html, body {
+			margin: 0;
+			margin-top: 0 !important;
+			padding: 0;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="tilt" id="{{userTilt}}"></div>
+
+	<div class="container pad-for-top-banner"></div>
+
+	<div class="top-banner">
+		<form class="search-bar-search-page" role="form" method="get" action="/add">
+		    <div class="form-group">
+		      <input type="text" class="form-control" id="name" placeholder="Search Topics" name="name">
+		    </div>
+		</form>
+	</div>
+
+	<div class="sub-banner">
+		<h1>Trending Topics</h1>
+	</div>
+
+	<a class="divider"><hr></a>
+
+	<div class="topics">
+
+		<div class="topicTable">
+			<table>
+		      	<tr>     
+		        	<td colspan="2" border="0">
+		        		<a href="https://www.google.com/search?q=iowa+caucus">Iowa Caucuses</a>
+		        	</td>
+		        	
+		        	<td>2k+ searches</td>
+		     	</tr>
+		     
+		     	<tr>
+		        	<td colspan="2">
+		        		<a href="https://www.google.com/search?q=superbowl">Superbowl</a>
+		        	</td>
+		        	<td>1.5k+ searches</td>
+		      	</tr>
+		      	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=kansas+city">Kansas City</a>
+			        </td>
+			        <td>900+ searches</td>
+		    	</tr>
+		    	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=pete+buttigieg">Pete Buttigieg</a>
+			        </td>
+			        <td>850+ searches</td>
+		    	</tr>
+		    	<tr>
+			        <td colspan="2">
+			        	<a href="https://www.google.com/search?q=coronavirus">Coronavirus</a>
+			        </td>
+			        <td>600+ searches</td>
+		    	</tr>
+
+
+		    </table>
+		</div>
+	</div>
+
+	<a class="divider"><hr></a>
+
+	<div class="sub-banner">
+		<div class="title">
+			<h3>Trending Articles</h3>
+		</div>
+	</div>
+
+	<div class="container article-list">
+
+		{{#each articles}}
+		<a class="container link search" id="{{tilt}}" href={{URL}} target="_blank">
+
+			<div class="container article-container">
+
+				<div class="container headline-container">
+					<h3 class="headline">{{headline}}</h3>
+				</div>
+
+				<div class="container image-container">
+					<img src={{imageURL}} class="img-responsive">
+				</div>
+
+			</div>
+
+		</a>
+
+		<div class="container article-break"></div>
+
+		{{/each}}
+
+	</div>
+
+<!-- 		<div id="article1">
+			<a class="divider"><hr></a>
+			<div class="articleBanner">
+				<div class="row">
+					<div class="articleTitles column">
+						<h4>
+							<a href="https://www.washingtonpost.com/politics/trump-lashes-out-at-democrats-in-cheering-his-acquittal-as-pelosi-declares-him-impeached-forever/2020/02/06/2148e47a-48f3-11ea-b4d9-29cc419287eb_story.html">Trump lashes out at Democrats in cheering his acquittal as Pelosi declares him 'impeached forever'</a>
+						</h4>
+
+					</div>
+					<div class="img column">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjE068UhyLyrAJ3bhRsmWZsVf6h00UZ6dAZZjugk2DutdqQ1Z05fA_wkk1rmWzZKOUCl0u4g&usqp=CAI&s">
+					</div>
+				</div>
+			</div>
+
+			<a class="divider"><hr></a>
+			<div class="articleBanner">
+				<div class="row">
+					<div class="articleTitles column">
+						<h4>
+							<a href="https://www.foxnews.com/politics/iowa-democrat-final-caucus-vote-totals-buttigieg-sanders">Iowa Dems release '100 percent' of caucus vote totals showing  Buttigieg ahead, amid calls for recanvass</a>
+						</h4>
+
+					</div>
+					<div class="img column">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMf3L6Ymcn1dRAvgBf77hO1yczmQiUh5GMUQ7ftss7mvVpjgN_KGlkcXqw0jRUAPI9YFxu2g&usqp=CAI&s">
+					</div>
+				</div>
+			</div>
+
+		</div> -->
+
+	</div>
+
+	<hr>
+
+<!-- 	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a class="selected" href="https://www.google.com/search?q=superbowl">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a href="https://www.google.com/search?q=superbowl">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+
+	</div> -->
+
+	<div class="myTaskbar">
+		<div class="taskbarTable">
+			<table>
+				<tr>
+		        	<td>
+		        		<a id="taskButton1" href="home?ut=0">Daily News</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton2" class="selected" href="search?ut=0">Trending</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton3" href="saved?ut=0">Saved</a>
+		        	</td>
+		        	<td>
+		        		<a id="taskButton4" href="more?ut=0">More...</a>
+		        	</td>
+		      	</tr>
+		    </table>
+		</div>
+
+	</div>
+
+
+
+
+</body>
+
+
+
+</html>

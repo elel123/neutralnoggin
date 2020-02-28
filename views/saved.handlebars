@@ -1,12 +1,11 @@
 <html>
-<!-- File for home page -->
-
 <head>
-	<title>Neutral Noggin - Home</title>
+
+	<title>Neutral Noggin - Saved</title>
 
 	<meta charset="utf-8">
-	<!-- Set size of screen to fit device-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
@@ -16,14 +15,15 @@
 	<!-- Link google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">
 
+	<!-- Script for linking tooltaskbars html-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<!-- Link scripts -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/neutral-noggin.js"></script>
 
-	<!-- Script for linking tooltaskbars html-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 	<script>
 		$(document).ready(function(){
 			$("#topbanner").load("topbanner.html");
@@ -32,59 +32,30 @@
 
 </head>
 
-
 <body>
+	<div id="topbanner"></div>
+
 	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
 	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
 
-	<div id="topbanner"></div>
 	<div class="myTaskbar">
 		<div class="taskbarTable">
 			<table>
 				<tr>
 		        	<td>
-               			<a id="taskButtonH" class="selected" href="home?ut=0">Daily News</a>
+		        		<a id="taskButtonH" href="home?ut=0">Daily News</a>
 		        	</td>
 		        	<td>
-		        		<a id="taskButtonS" href="saved?ut=0">Saved</a>
+		        		<a id="taskButtonS" href="saved?ut=0" class="selected">Saved</a>
 		        	</td>
 		        	<td>
-		        		<a id="taskButtonM" href="more?ut=0">More...</a>
+		        		<a id="taskButtonM" href="more?ut=0">More</a>
 		        	</td>
 		      	</tr>
 		    </table>
 		</div>
 	</div>
 
-
-
-
-
-	<div class="container" id="article-list">
-
-		{{#each articles}}
-		<a class="container link index" id="{{tilt}}" href={{URL}} target="_blank">
-
-			<div class="container article-container">
-
-				<div class="container headline-container">
-					<h3 class="headline">{{headline}}</h3>
-				</div>
-
-				<div class="container image-container">
-					<img src={{imageURL}} class="img-responsive">
-				</div>
-
-			</div>
-
-		</a>
-
-		<div class="container article-break"></div>
-
-		{{/each}}
-
-	</div>
-	<hr><hr>
 
 
 </body>

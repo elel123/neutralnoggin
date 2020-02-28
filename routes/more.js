@@ -1,12 +1,11 @@
 /*
- * GET home page.
+ * GET MORE PAGE	
  */
 
 // Get articles data
 var data = require("../data.json");
 
 exports.view = function(request, response){
-	// console.log(data);
 	var requestTilt = request.query.ut;
 	var requestUser = request.query.user;
 
@@ -30,30 +29,26 @@ exports.view = function(request, response){
 		renderDataCopy["loggedInProfile"] = requestUser;
 	}
 
-	response.render('index', renderDataCopy);
-};
-
-exports.viewStart = function(request, response){
-	response.render('index', data);
-};
-
-// Log out screen
-exports.viewOut = function(request, response){
-	
-	var requestTilt = request.query.ut;
-	var requestUser = request.query.user;
-
-	//No need to update tilt since going to the more pasge already did that.
-
-	var renderDataCopy = JSON.parse(JSON.stringify(data));
-
-	renderDataCopy['userTilt'] = 0;
-	renderDataCopy["loggedInProfile"] = "no one. Login?";
-	response.render('index', renderDataCopy);
-
+	response.render('more', renderDataCopy);
 };
 
 
-exports.getData = function(request, response) {
-	response.send(data);
+
+exports.login = function(request, response){
+	var username = request.body.name;
+
+	var i;
+	var profilesArr = data["profiles"];
+	var requestTilt = 0;
+	for (i = 0; i < profilesArr.length; i++) {
+
+		if (profilesArr[i]["name"] == username) {
+
+			requestTilt = profilesArr[i]["tilt"];
+			profilesArr[i]["loggedIn"] = true;
+			data["loggedInProfile"] = username;
+		}
+	}
+
+	data['userTilt'] = requestTilt; 
 }
