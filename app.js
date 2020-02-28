@@ -15,6 +15,7 @@ var saved = require('./routes/saved.js');
 var more = require('./routes/more.js');
 var login = require('./routes/login.js');
 var scale = require('./routes/scale.js');
+var register = require('./routes/register.js');
 
 // Example route
 // var user = require('./routes/user');
@@ -54,6 +55,7 @@ app.get('/more', more.view);
 app.post('/morelogin', more.login);
 app.get('/login', login.view)
 app.get('/scale', scale.view)
+app.get('/register', register.view)
 
 app.get('/getData', index.getData);
 
