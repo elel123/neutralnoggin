@@ -37,6 +37,11 @@ exports.viewStart = function(request, response){
 	response.render('index', data);
 };
 
+exports.viewStartAlt = function(request, response){
+	data["altView"] = false;
+	response.render('index', data);
+};
+
 // Log out screen
 exports.viewOut = function(request, response){
 	
@@ -56,4 +61,4 @@ exports.viewOut = function(request, response){
 
 exports.getData = function(request, response) {
 	response.send(data);
-}
+};
