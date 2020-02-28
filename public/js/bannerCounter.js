@@ -15,7 +15,7 @@ function initializePage() {
 	tiltCounterB = $(".tilt").attr('id');
 	console.log("extracted tilt for banner: " + tiltCounterB);
 
-	tiltCounterB = parseInt(tiltCounter);
+	tiltCounterB = parseInt(tiltCounterB);
 
 	//Attempt to extract the user name
 	var username = $(".userlogin").attr('id');
@@ -29,11 +29,9 @@ function initializePage() {
 		var id = $(this).attr('id');
 		tiltCounterB = tiltCounterB + parseInt(id);
 		console.log("banner tilt: " + tiltCounterB);
+		$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB);
+		
 	});
-
-	
-
-	$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB);
 
 
 }
