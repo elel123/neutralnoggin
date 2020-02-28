@@ -33,5 +33,7 @@ function initializePage() {
 		
 	});
 
+	$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB);
+
 
 }
