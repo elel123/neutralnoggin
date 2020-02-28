@@ -53,6 +53,8 @@ app.get('/search', search.view);
 app.get('/saved', saved.view);
 app.get('/more', more.view);
 app.post('/morelogin', more.login);
+app.post('/moreRegister', more.register);
+
 app.get('/login', login.view)
 app.get('/scale', scale.view)
 app.get('/register', register.view)

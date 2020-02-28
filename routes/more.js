@@ -43,12 +43,22 @@ exports.login = function(request, response){
 	for (i = 0; i < profilesArr.length; i++) {
 
 		if (profilesArr[i]["name"] == username) {
-
 			requestTilt = profilesArr[i]["tilt"];
-			profilesArr[i]["loggedIn"] = true;
-			data["loggedInProfile"] = username;
 		}
 	}
+};
 
-	data['userTilt'] = requestTilt; 
-}
+exports.register = function(request, response){
+	var username = request.body.name;
+	var password = request.body.pass;
+
+	var newProfile = {
+		"name": username,
+		"password": password,
+		"tilt": 0,
+		"saved": []
+	}
+
+	data["profiles"].push(newProfile);
+
+};
