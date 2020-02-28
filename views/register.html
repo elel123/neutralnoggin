@@ -1,11 +1,12 @@
 <html>
-<head>
+<!-- File for home page -->
 
-	<title>Neutral Noggin - More</title>
+<head>
+	<title>Neutral Noggin - Login</title>
 
 	<meta charset="utf-8">
+	<!-- Set size of screen to fit device-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/neutral-noggin.css" rel="stylesheet">
 
 	<!-- Link css files -->
 	<link href="css/bootstrap.css" rel="stylesheet">
@@ -28,6 +29,8 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/neutral-noggin.js"></script>
 
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
 
 
 	<!-- Google Analytics -->
@@ -43,6 +46,7 @@
 	<!-- End Google Analytics -->
 </head>
 
+
 <body>
 	<div id="topbanner"></div>
 
@@ -50,7 +54,6 @@
 	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
 
 	<div class="myTaskbar">
-
 			<div class="taskbarTable">
 				<table>
 					<tr>
@@ -71,55 +74,51 @@
 
 
 
+	<div class="sub-banner">
+		<h1>Create an Account!</h1>
+	</div>
 
-	<div class="container" id="more-page">
+	<div class="container login-fields">
+		<p class="setting-text">Username</p>
 
-		<h4 class="title">Settings and More</h4>
-		<p class="logMsg" id="{{loggedInProfile}}">(logged in as {{loggedInProfile}})</p>
+		<form class="search-bar" id="login" role="form" method="get">
+		    <div class="form-group">
+		      <input type="text" class="form-control" id="username" placeholder="Name">
+		    </div>
 
-		<div id="login">
-			<a id="logoutButton">
-				<button class="logoutButton" type="button">Logout</button>
-			</a>
-		</div>		
+			<p class="setting-text">Password</p>
+		    <div class="form-group">
+		      <input class="form-control" id="password" type="password" placeholder="Password">
+		    </div>
 
-		<div class="container article-break"></div>
-
-		<div class="container setting">
-			<p class="setting-text">Account</p>
-
-			<div id="login">
-				<a id="loginButton" href="login?ut=0">
-					<button type="button" >Login</button>
-				</a>
+			<div id ="done-button">
+				<input type="submit" id="submitBtn" class="btn btn-default" value="Done">
 			</div>
-		</div>
+			    
+		</form>
 
-
-		<div class="container small-break"></div>
-
-
-		<div class="container setting">
-			<p class="setting-text">Your Noggin Scale</p>
-
-			<div id="login">
-				<a href="scale?ut=0" id="scaleButtonFromMore">
-					<button type="button">View</button>
-				</a>
-			</div>
-		</div>
-
-			{{#if altView}}
-			{{> scaleDescription}}
-			{{else}}
-			{{/if}}
-
-		<div class="container small-break"></div>
-
-
+		<div class="container" style="height: 40px"></div>
 
 	</div>
 
+	<hr>
+
+
+
+
+	<div class="container login-buttons">
+
+		<div id ="cancel-button">
+			<a id="cancelButton" href="more?ut=0">
+				<button type="button">Cancel</button>
+			</a>
+		</div>
+
+		<hr>
+		<!-- <p>Or login through Facebook!</p> -->
+		<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> -->
+
+	</div>
 
 
 
