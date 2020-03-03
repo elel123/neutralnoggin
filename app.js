@@ -46,20 +46,25 @@ if ('development' == app.get('env')) {
 // Add routes below! pt.2
 app.get('/', index.viewStart);
 app.get('/a', index.viewStartAlt);
-
 app.get('/home', index.view);
 app.get('/homeLogout', index.viewOut);
+app.get('/getData', index.getData);
+
 app.get('/search', search.view);
+
 app.get('/saved', saved.view);
+app.post('/saveArticle', saved.saveArticle);
+
 app.get('/more', more.view);
 app.post('/morelogin', more.login);
 app.post('/moreRegister', more.register);
 
-app.get('/login', login.view)
-app.get('/scale', scale.view)
-app.get('/register', register.view)
+app.get('/login', login.view);
+app.get('/register', register.view);
+app.get('/scale', scale.view);
 
-app.get('/getData', index.getData);
+
+
 
 // A/B Testing
 app.get('/home_page_A', index.viewStart);
