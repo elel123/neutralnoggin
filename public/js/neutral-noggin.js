@@ -213,6 +213,11 @@ function registerHandler() {
 				isSuccessful = false;
 			}
 
+			if (username.length < 4) {
+				alert("Error: Username must be longer than 4 characters");
+				isSuccessful = false;
+			}
+
 
 			if (isSuccessful) {
 				tiltCounter = 0;
