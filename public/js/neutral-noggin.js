@@ -51,6 +51,7 @@ function initializePage() {
 	logoutHandler();
 	registerHandler();
 
+	$('#scaleButtonFromMore').click(recordGAEvent);
 }
 
 function logoutHandler() {
@@ -284,4 +285,8 @@ function getScaleImage() {
 		return "<img src=\"scale_imgs/heavy-right-scale.PNG\" class=\"img-responsive scale\">";
 	}
 
+}
+
+function recordGAEvent(e) {
+	ga("send", "event", "more_scale", "click");
 }
