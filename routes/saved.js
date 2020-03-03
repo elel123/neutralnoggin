@@ -39,3 +39,31 @@ exports.view = function(request, response){
 
 	response.render('saved', renderDataCopy);
 };
+
+exports.saveArticle = function(request, response) {
+	var articleURL = request.body.url;
+	var username = request.body.user;
+
+	var articleJSON = {};
+
+	//Find the article
+	var i;
+	var articlesArr = data["articles"];
+	for (i = 0; i < articlesArr.length; i++) {
+		if (articlesArr[i]["URL"] == articleURL) {
+			articleJSON = articlesArr[i];
+		}
+	}
+
+	//Find the user account
+	var profilesArr = data["profiles"];
+	for (i = 0; i < profilesArr.length; i++) {
+		if (profilesArr[i]["name"] == username) {
+
+			//Save the article to the user's account
+			profilesArr[i]["saved"].push(articleJSON);
+		}
+	}
+
+	
+};
