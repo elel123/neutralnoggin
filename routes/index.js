@@ -34,13 +34,17 @@ exports.view = function(request, response){
 };
 
 exports.viewStart = function(request, response){
-	data["altView"] = false;
-	response.render('index', data);
+	//Make data copy so multiple people can log in w/o conflicting data
+	var renderDataCopy = JSON.parse(JSON.stringify(data));
+	renderDataCopy["altView"] = false;
+	response.render('index', renderDataCopy);
 };
 
 exports.viewStartAlt = function(request, response){
-	data["altView"] = true;
-	response.render('index', data);
+	//Make data copy so multiple people can log in w/o conflicting data
+	var renderDataCopy = JSON.parse(JSON.stringify(data));
+	renderDataCopy["altView"] = true;
+	response.render('index', renderDataCopy);
 };
 
 // Log out screen

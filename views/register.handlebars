@@ -52,6 +52,11 @@
 
 	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
 	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+	{{#if altView}}
+		<div class="version" id="B" name="ver"></div>
+	{{else}}
+		<div class="version" id="A" name="ver"></div>
+	{{/if}}
 
 	<div class="myTaskbar">
 			<div class="taskbarTable">
@@ -80,7 +85,7 @@
 
 	<div class="container login-fields">
 
-		<form id="login" class="search-bar" role="form" method="get" action="/morelogin?ut=0&">
+		<form id="register" class="search-bar" role="form" method="get">
 			<p class="setting-text">Username</p>
 		    <div class="form-group" style="float: right">
 		      <input type="text" class="form-control" id="username" placeholder="Username" name="username">
@@ -90,7 +95,7 @@
 
 			<p class="setting-text">Password</p>
 		    <div class="form-group" style="float: right">
-		      <input class="form-control" type="password" placeholder="Password" name="password">
+		      <input class="form-control" id="password" type="password" placeholder="Password" name="password">
 		    </div>
 
 			<div class="container" style="height: 50px"></div>

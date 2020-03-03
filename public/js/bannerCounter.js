@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 var tiltCounterB = 0;
 var currentUserB = "not-logged-in";
+var versionB = "A";
 
 /*
  * Function that is called when the document is ready.
@@ -24,16 +25,19 @@ function initializePage() {
 	}
 	currentUserB = username;
 
+	//Attempt to extract the version
+	versionB = $(".version").attr('id');
+
 	// register a click listener 
 	$('.container.link').click(function() {
 		var id = $(this).attr('id');
 		tiltCounterB = tiltCounterB + parseInt(id);
 		console.log("banner tilt: " + tiltCounterB);
-		$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB);
+		$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB + "&v=" + versionB);
 		
 	});
 
-	$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB);
+	$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB + "&v=" + versionB);
 
 
 }
