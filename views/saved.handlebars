@@ -49,6 +49,11 @@
 
 	<div class="tilt" id="{{userTilt}}" name="tilt"></div>
 	<div class="userlogin" id="{{loggedInProfile}}" name="userlogin"></div>
+	{{#if altView}}
+		<div class="version" id="B" name="ver"></div>
+	{{else}}
+		<div class="version" id="A" name="ver"></div>
+	{{/if}}
 
 	<div class="myTaskbar">
 		<div class="taskbarTable">

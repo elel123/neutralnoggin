@@ -9,6 +9,7 @@ $(document).ready(function() {
 
 var tiltCounter = 0;
 var currentUser = "not-logged-in";
+var version = "A";
 
 /*
  * Function that is called when the document is ready.
@@ -29,6 +30,11 @@ function initializePage() {
 
 	console.log("hello " + username);
 	currentUser = username;
+
+	//Attempt to extract the version
+	version = $(".version").attr('id');
+	console.log("version: " + version);
+
 
 	updateTaskbar(tiltCounter);
 
@@ -58,7 +64,7 @@ function logoutHandler() {
 	$(".logoutButton").click(function(e) {
 		currentUser = "not-logged-in";
 		tiltCounter = 0;
-		window.location.href = "homeLogout?ut=" + tiltCounter + "&user=" + currentUser;
+		window.location.href = "homeLogout?ut=" + tiltCounter + "&user=" + currentUser + "&v=" + version;
 	});
 
 }
@@ -131,7 +137,7 @@ function loginHandler() {
 						
 						//Redirect user to more page
 						updateTaskbar(tiltCounter);
-						window.location.href = "more?ut=" + tiltCounter + "&user=" + currentUser;
+						window.location.href = "more?ut=" + tiltCounter + "&user=" + currentUser + "&v=" + version;
 					}
 
 				}
@@ -219,7 +225,7 @@ function registerHandler() {
 				
 				//Redirect user to more page
 				updateTaskbar(tiltCounter);
-				window.location.href = "more?ut=" + tiltCounter + "&user=" + currentUser;
+				window.location.href = "more?ut=" + tiltCounter + "&user=" + currentUser + "&v=" + version;
 			}
 
 		});
@@ -239,14 +245,14 @@ function tiltCalculator(tilt) {
 
 function updateTaskbar(tilt) {
 	//update the hrefs to reflect correct tilt
-	$("#taskButtonH").attr('href', 'home?ut=' + tilt + "&user=" + currentUser);
-	$("#taskButtonS").attr('href', 'saved?ut=' + tilt + "&user=" + currentUser);
-	$("#taskButtonM").attr('href', 'more?ut=' + tilt + "&user=" + currentUser);
-	$("#loginButton").attr('href', 'login?ut=' + tilt + "&user=" + currentUser);
-	$("#scaleButton").attr('href', 'scale?ut=' + tilt + "&user=" + currentUser);
-	$("#cancelButton").attr('href', 'more?ut=' + tilt + "&user=" + currentUser);
-	$("#registerButton").attr('href', 'register?ut=' + tilt + "&user=" + currentUser);
-	$("#scaleButtonFromMore").attr('href', 'scale?ut=' + tilt + "&user=" + currentUser);
+	$("#taskButtonH").attr('href', 'home?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#taskButtonS").attr('href', 'saved?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#taskButtonM").attr('href', 'more?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#loginButton").attr('href', 'login?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#scaleButton").attr('href', 'scale?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#cancelButton").attr('href', 'more?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#registerButton").attr('href', 'register?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
+	$("#scaleButtonFromMore").attr('href', 'scale?ut=' + tilt + "&user=" + currentUser + "&v=" + version);
 }
 
 

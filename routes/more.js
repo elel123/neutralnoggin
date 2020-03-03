@@ -8,6 +8,8 @@ var data = require("../data.json");
 exports.view = function(request, response){
 	var requestTilt = request.query.ut;
 	var requestUser = request.query.user;
+	var requestVer = request.query.v;
+
 
 	//Check which profile to update
 	var i;
@@ -22,6 +24,12 @@ exports.view = function(request, response){
 	var renderDataCopy = JSON.parse(JSON.stringify(data));
 
 	renderDataCopy['userTilt'] = parseInt(requestTilt);
+
+	if (requestVer == "A") {
+		renderDataCopy['altView'] = false;
+	} else {
+		renderDataCopy['altView'] = true;
+	}
 
 	if (requestUser == "not-logged-in") {
 		renderDataCopy["loggedInProfile"] = "no one. Login?";
