@@ -18,12 +18,12 @@
 	margin: auto;
 }
 
-.app-title {
+h3.app-title {
 	width: 60%;
 	height: 15px;
 	float: right;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 30px;
+	font-size: 8vw;
 	color: black;
 	margin: auto;
 	margin-bottom: 10px;
@@ -100,16 +100,14 @@
 
 .container.headline-container {
 	float: left;
-	width: 60vw;
+	max-width: 50vw;
 }
 
 .container.image-container {
 	padding-top: 20px;
 	float: right;
-	max-width: 25vw;
-	max-height: 25vh;
-	min-width: 100px;
-	min-height: 100px;
+	max-width: 32vw;
+	max-height: 32vh;
 }
 
 img  {
@@ -122,9 +120,8 @@ a {
 
 .headline {
 	font-family: 'Roboto Slab', serif;
-	font-size: 16px;
+	font-size: 15px;
 	text-align: left;
-	font-color: #2d0054;
 }
 
 .container.article-break {
