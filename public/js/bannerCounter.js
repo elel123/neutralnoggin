@@ -33,9 +33,17 @@ function initializePage() {
 		var id = $(this).attr('id');
 		tiltCounterB = tiltCounterB + parseInt(id);
 		console.log("banner tilt: " + tiltCounterB);
+		
+
+		
+		currentUserB = $(".userlogin").attr('id');
+		console.log("user is still " + currentUserB);
+
 		$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB + "&v=" + versionB);
 		
 	});
+
+	console.log("user is still " + currentUserB);
 
 	$("#bannerButton").attr('href', 'scale?ut=' + tiltCounterB + "&user=" + currentUserB + "&v=" + versionB);
 

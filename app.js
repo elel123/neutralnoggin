@@ -54,6 +54,7 @@ app.get('/search', search.view);
 
 app.get('/saved', saved.view);
 app.post('/saveArticle', saved.saveArticle);
+app.post('/deleteArticle', saved.deleteArticle);
 
 app.get('/more', more.view);
 app.post('/morelogin', more.login);

@@ -57,5 +57,7 @@
 
 	"loggedInProfile": "no one. Login?",
 
+	"userSaved": [],
+
 	"altView": false
 }
