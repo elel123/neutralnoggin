@@ -1,4 +1,4 @@
-<html>
+       <html>
 <head>
 
 	<title>Neutral Noggin - Saved</title>
@@ -73,7 +73,35 @@
 		</div>
 	</div>
 
-	<p style="font-size: 13px; color: #787878; margin: 10px">A work in progress!</p>
+	<div class="container" id="article-list">
+		{{#each userSaved}}
+		<a class="container link index" id="{{tilt}}" href={{URL}} target="_blank">
+
+			<div class="container article-container">
+
+				<div class="container headline-container">
+					<h3 class="headline">{{headline}}</h3>
+				</div>
+
+				<div class="container image-container">
+					<img src={{imageURL}} class="img-responsive">
+				</div>
+
+			</div>
+
+		</a>
+
+		<div class="deleteArticleButton" id="{{URL}}">
+			<button type="button">Delete</button>
+		</div>
+
+		<div class="container article-break"></div>
+
+		{{/each}}
+	</div>
+	<hr>
+	<p id="saveMsg" style="font-size: 14px; color: #787878; margin: 10px">Any saved articles will show up here!</p>
+	<hr>
 
 </body>
 </html>

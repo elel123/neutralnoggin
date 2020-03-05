@@ -50,8 +50,66 @@ function initializePage() {
 	loginHandler();
 	logoutHandler();
 	registerHandler();
+	savedArticleHandler();
+	deleteArticleHandler();
 
 	$('#scaleButtonFromMore').click(recordGAEvent);
+}
+
+function savedArticleHandler() {
+
+	//Keep track of saved button clicks
+	$('.saveArticleButton').click(function() {
+
+		if (currentUser != "not-logged-in") {
+			var URL = $(this).attr('id');
+			$.post("saveArticle", {url: URL, user: currentUser}, function(result){
+				console.log("successfully saved the article!");
+			});
+
+		} else {
+			alert("Unlock the ability to save by logging in!");
+		}
+		
+
+	});
+
+	//Check whether to display the hide message or not
+	$.get('getData', function(data) {
+		//Attempt to extract the user name
+		var username = $(".userlogin").attr('id');
+
+		if (username != "no one. Login?") {
+			var i;
+			var profilesArr = data["profiles"];
+			for (i = 0; i < profilesArr.length; i++) {
+				if (profilesArr[i]["name"] == username) {
+					if (profilesArr[i]["saved"].length != 0) {
+						$("#saveMsg").hide();
+					}
+
+				}
+			}
+		}
+
+
+	});
+}
+
+function deleteArticleHandler() {
+
+	//Keep track of saved button clicks
+	$('.deleteArticleButton').click(function() {
+
+		var URL = $(this).attr('id');
+		console.log(URL);
+		$.post("deleteArticle", {url: URL, user: currentUser}, function(result){
+			console.log("successfully deleted the article!");
+			window.location.href = "saved?ut=" + tiltCounter + "&user=" + currentUser + "&v=" + version;
+		});
+
+
+	});
 }
 
 function logoutHandler() {
