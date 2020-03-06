@@ -84,12 +84,14 @@ function savedArticleHandler() {
 			var profilesArr = data["profiles"];
 			for (i = 0; i < profilesArr.length; i++) {
 				if (profilesArr[i]["name"] == username) {
-					if (profilesArr[i]["saved"].length != 0) {
-						$("#saveMsg").hide();
+					if (profilesArr[i]["saved"].length == 0) {
+						$("#saveMsg").append("<p>Any saved articles will show up here!</p>");
 					}
 
 				}
 			}
+		} else {
+			$("#saveMsg").append("<p>Create an account or log in to start saving articles!</p>");
 		}
 
 
@@ -327,24 +329,24 @@ function getScaleImage() {
 	console.log("extracted tilt for scale: " + tiltCounter);
 
 
-	if (tiltCounter == 0 || (tiltCounter > -0.5 && tiltCounter < 0.5)) {
+	if (tiltCounter == 0 || (tiltCounter > -2 && tiltCounter < 2)) {
 		// neutral
 		return "<img src=\"scale_imgs/balanced-scale.PNG\" class=\"img-responsive scale\">";
 
-	} else if (tiltCounter <= -0.5 && tiltCounter >= -2) {
+	} else if (tiltCounter <= -2 && tiltCounter >= -4) {
 		// medium left
 		return "<img src=\"scale_imgs/med-left-scale.PNG\" class=\"img-responsive scale\">";
 
-	} else if (tiltCounter >= 0.5 && tiltCounter <= 2) {
+	} else if (tiltCounter >= 2 && tiltCounter <= 4) {
 		// medium right
 		return "<img src=\"scale_imgs/med-right-scale.PNG\" class=\"img-responsive scale\">";
 
-	} else if (tiltCounter < -2) {
+	} else if (tiltCounter < -4) {
 		// heavy left
 		return "<img src=\"scale_imgs/heavy-left-scale.PNG\" class=\"img-responsive scale\">";
 
-	} else if (tiltCounter > 2) {
-		// heavy left
+	} else if (tiltCounter > 4) {
+		// heavy right
 		return "<img src=\"scale_imgs/heavy-right-scale.PNG\" class=\"img-responsive scale\">";
 	}
 
