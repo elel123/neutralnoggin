@@ -67,6 +67,8 @@ function savedArticleHandler() {
 				console.log("successfully saved the article!");
 			});
 
+			$(this).add(".button").html("<button type='button'> Saved! </button>");
+
 		} else {
 			alert("Unlock the ability to save by logging in!");
 		}
